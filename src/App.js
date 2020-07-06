@@ -1,24 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
+import Flexi from './components/Flexi'
+import flexiConfig from './flexiConfig'
 import './App.css';
 
 function App() {
+
+  const onFlexiSubmit = (name, state) => {
+    alert(`Person's Name : ${name}\nPerson's State : ${state}`)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Flexi onSubmit={onFlexiSubmit} config={flexiConfig} />
     </div>
   );
 }
